@@ -1,10 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+body {
+  font-family: "Helvetica", Sans-Serif;
+  background-color: grey;
+}
 
-</body>
-</html>
+/* Header Title */
+.header {
+  padding: 40px;
+  text-align: center;
+  background: #f9f7f7;
+  margin:30px;
+  font-size:20px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that float next to each other */
+h1 {
+color: rgb(255, 175, 188);
+}
+h2 {
+  color: rgb(255, 195, 195);
+  }
+h3 {
+    color: rgb(211, 211, 211)
+}
+p {
+  color: white;
+}
+

@@ -2,12 +2,12 @@
 <html>
 <html lang="en-US">
 <head>
-    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" th:href="@{'/style' + ${styleSheetID} + '.css'}">
 </head>
 
 <body>
 
-<h1> Style Sheet 2 </h1>
+<h1> Style Sheet 1 </h1>
 <br>
 <h1>H1 Example</h1>
 <h2>H2 Example</h2>

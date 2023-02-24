@@ -1,13 +1,18 @@
-package org.wcci.entities.repositories.restControllers;
+package org.wcci.entities.repositories.restControllers.entities;
 
-public class Format {
-    String backgroundColor;
-    String h1Color;
-    String h2Color;
-    String h3Color;
-    String pColor;
+import javax.persistence.Id;
 
-    public Format(String backgroundColor, String h1Color, String h2Color, String h3Color, String pColor){
+public class Style {
+
+    private String name;
+    private String backgroundColor;
+    private String h1Color;
+    private String h2Color;
+    private String h3Color;
+    private String pColor;
+
+    public Style(String name, String backgroundColor, String h1Color, String h2Color, String h3Color, String pColor){
+        this.name = name;
         this.backgroundColor = backgroundColor;
         this.h1Color = h1Color;
         this.h2Color = h2Color;
@@ -15,6 +20,9 @@ public class Format {
         this.pColor = pColor;
     }
 
+    public String getName() {
+        return name;
+    }
     public String getBackgroundColor() {
         return backgroundColor;
     }

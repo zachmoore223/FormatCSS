@@ -1,46 +1,47 @@
-package org.wcci.entities.repositories.restControllers;
+package org.wcci.entities.repositories.restControllers.restControllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.wcci.entities.repositories.restControllers.entities.Style;
 
 @Controller
-public class FormatController {
-
+public class StyleController {
     @GetMapping("/index")
     public String index() {
         return "indexTemplate.html";
     }
     @GetMapping("/css/{styleSheetID}.css")
      public String getStyleSheet(Model model, @PathVariable int styleSheetID){
-        Format testerFormat1 = new Format("darkgrey", "darkred", "rgb(231, 231, 231",
+        Style testerStyle1 = new Style("123", "darkgrey", "darkred", "rgb(231, 231, 231",
                 "white", "black");
-        Format testerFormat2 = new Format("grey", "rgb(255, 175, 188);", "rgb(255, 195, 195)",
+        Style testerStyle2 = new Style("123", "grey", "rgb(255, 175, 188);", "rgb(255, 195, 195)",
                 "rgb(211, 211, 211)", "white");
-        Format blankFormat = new Format("white", "black", "black",
+        Style blankStyle = new Style("123", "white", "black", "black",
                 "black", "black");
+
         model.addAttribute("styleSheetID", styleSheetID);
     if (styleSheetID==1) {
-        model.addAttribute("bodyBackgroundColor", testerFormat1.getBackgroundColor());
-        model.addAttribute("h1Color", testerFormat1.getH1Color());
-        model.addAttribute("h2Color", testerFormat1.getH2Color());
-        model.addAttribute("h3Color", testerFormat1.getH3Color());
-        model.addAttribute("pColor", testerFormat1.getPColor());
+        model.addAttribute("bodyBackgroundColor", testerStyle1.getBackgroundColor());
+        model.addAttribute("h1Color", testerStyle1.getH1Color());
+        model.addAttribute("h2Color", testerStyle1.getH2Color());
+        model.addAttribute("h3Color", testerStyle1.getH3Color());
+        model.addAttribute("pColor", testerStyle1.getPColor());
     }
     else if (styleSheetID==2){
-        model.addAttribute("bodyBackgroundColor", testerFormat1.getBackgroundColor());
-        model.addAttribute("h1Color", testerFormat2.getH1Color());
-        model.addAttribute("h2Color", testerFormat2.getH2Color());
-        model.addAttribute("h3Color", testerFormat2.getH3Color());
-        model.addAttribute("pColor", testerFormat2.getPColor());
+        model.addAttribute("bodyBackgroundColor", testerStyle2.getBackgroundColor());
+        model.addAttribute("h1Color", testerStyle2.getH1Color());
+        model.addAttribute("h2Color", testerStyle2.getH2Color());
+        model.addAttribute("h3Color", testerStyle2.getH3Color());
+        model.addAttribute("pColor", testerStyle2.getPColor());
     }
     else{
-            model.addAttribute("bodyBackgroundColor", blankFormat.getBackgroundColor());
-            model.addAttribute("h1Color", blankFormat.getH1Color());
-            model.addAttribute("h2Color", blankFormat.getH2Color());
-            model.addAttribute("h3Color", blankFormat.getH3Color());
-            model.addAttribute("pColor", blankFormat.getPColor());
+            model.addAttribute("bodyBackgroundColor", blankStyle.getBackgroundColor());
+            model.addAttribute("h1Color", blankStyle.getH1Color());
+            model.addAttribute("h2Color", blankStyle.getH2Color());
+            model.addAttribute("h3Color", blankStyle.getH3Color());
+            model.addAttribute("pColor", blankStyle.getPColor());
         }
 //
 //

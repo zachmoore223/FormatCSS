@@ -1,17 +1,31 @@
 package org.wcci.entities.repositories.restControllers.restControllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.wcci.entities.repositories.restControllers.entities.Style;
+import org.wcci.entities.repositories.restControllers.repositories.StyleRepository;
 
 @Controller
 public class StyleController {
+    final StyleRepository styleRepository;
+    public StyleController(@Autowired StyleRepository styleRepository) {
+        this.styleRepository = styleRepository;
+    }
     @GetMapping("/index")
     public String index() {
         return "indexTemplate.html";
     }
+
+    @PostMapping("/styles")
+    public Style postCategory(final @RequestBody Style style) {
+        return styleRepository.save(style);
+    }
+
     @GetMapping("/css/{styleSheetID}.css")
      public String getStyleSheet(Model model, @PathVariable int styleSheetID){
         Style testerStyle1 = new Style("darkgrey", "darkred", "rgb(231, 231, 231",
@@ -43,47 +57,6 @@ public class StyleController {
             model.addAttribute("h3Color", blankStyle.getH3Color());
             model.addAttribute("pColor", blankStyle.getPColor());
         }
-//
-//
-//        if (styleSheetID == 1){
-//            model.addAttribute("bodyBackgroundColor", "darkgrey");
-//        } else if (styleSheetID == 2){
-//            model.addAttribute("bodyBackgroundColor", "grey");
-//        } else {
-//            model.addAttribute("bodyBackgroundColor", "white");
-//        }
-//
-//        if (styleSheetID == 1){
-//            model.addAttribute("h1Color", "darkred");
-//        } else if (styleSheetID == 2){
-//            model.addAttribute("h1Color", "rgb(255, 175, 188)");
-//        } else {
-//            model.addAttribute("h1Color", "black");
-//        }
-//
-//        if (styleSheetID == 1){
-//            model.addAttribute("h2Color", "darkred");
-//        } else if (styleSheetID == 2){
-//            model.addAttribute("h2Color", "rrgb(255, 195, 195);");
-//        } else {
-//            model.addAttribute("h2Color", "black");
-//        }
-//
-//        if (styleSheetID == 1){
-//            model.addAttribute("h3Color", "white");
-//        } else if (styleSheetID == 2){
-//            model.addAttribute("h3Color", "rgb(211, 211, 211)");
-//        } else {
-//            model.addAttribute("h3Color", "black");
-//        }
-//
-//        if (styleSheetID == 1){
-//            model.addAttribute("pColor", "black");
-//        } else if (styleSheetID == 2){
-//            model.addAttribute("pColor", "white");
-//        } else {
-//            model.addAttribute("pColor", "black");
-//        }
 
         return "cssTemplate.css";
     }

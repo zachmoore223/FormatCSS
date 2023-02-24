@@ -18,15 +18,15 @@ body {
 
 /* Create two equal columns that float next to each other */
 h1 {
-color: [(${h1Color})];;
+color: [(${h1Color})];
 }
 h2 {
-  color: rgb(231, 231, 231);
+  color: [(${h2Color})];;
   }
 h3 {
-  color: white
+  color: [(${h3Color})];
 }
 p {
-  color: black;
+  color: [(${pColor})];;
 }
 

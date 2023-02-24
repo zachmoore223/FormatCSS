@@ -14,22 +14,57 @@ public class FormatController {
     }
     @GetMapping("/css/{styleSheetID}.css")
      public String getStyleSheet(Model model, @PathVariable int styleSheetID){
+        Style testerStyle1 = new Style("darkgrey", "darkred", "rgb(231, 231, 231",
+                "white", "black");
         model.addAttribute("styleSheetID", styleSheetID);
-        if (styleSheetID == 1){
-            model.addAttribute("bodyBackgroundColor", "darkgrey");
-        } else if (styleSheetID == 2){
-            model.addAttribute("bodyBackgroundColor", "grey");
-        } else {
-            model.addAttribute("bodyBackgroundColor", "white");
-        }
-        
-        if (styleSheetID == 1){
-            model.addAttribute("h1Color", "darkred");
-        } else if (styleSheetID == 2){
-            model.addAttribute("h1Color", "rgb(255, 175, 188)");
-        } else {
-            model.addAttribute("h1Color", "black");
-        }
+
+        model.addAttribute("bodyBackgroundColor", testerStyle1.getBackgroundColor());
+        model.addAttribute("h1Color", testerStyle1.getH1Color());
+        model.addAttribute("h2Color", testerStyle1.getH2Color());
+        model.addAttribute("h3Color", testerStyle1.getH3Color());
+        model.addAttribute("pColor", testerStyle1.getPColor());
+
+//
+//
+//        if (styleSheetID == 1){
+//            model.addAttribute("bodyBackgroundColor", "darkgrey");
+//        } else if (styleSheetID == 2){
+//            model.addAttribute("bodyBackgroundColor", "grey");
+//        } else {
+//            model.addAttribute("bodyBackgroundColor", "white");
+//        }
+//
+//        if (styleSheetID == 1){
+//            model.addAttribute("h1Color", "darkred");
+//        } else if (styleSheetID == 2){
+//            model.addAttribute("h1Color", "rgb(255, 175, 188)");
+//        } else {
+//            model.addAttribute("h1Color", "black");
+//        }
+//
+//        if (styleSheetID == 1){
+//            model.addAttribute("h2Color", "darkred");
+//        } else if (styleSheetID == 2){
+//            model.addAttribute("h2Color", "rrgb(255, 195, 195);");
+//        } else {
+//            model.addAttribute("h2Color", "black");
+//        }
+//
+//        if (styleSheetID == 1){
+//            model.addAttribute("h3Color", "white");
+//        } else if (styleSheetID == 2){
+//            model.addAttribute("h3Color", "rgb(211, 211, 211)");
+//        } else {
+//            model.addAttribute("h3Color", "black");
+//        }
+//
+//        if (styleSheetID == 1){
+//            model.addAttribute("pColor", "black");
+//        } else if (styleSheetID == 2){
+//            model.addAttribute("pColor", "white");
+//        } else {
+//            model.addAttribute("pColor", "black");
+//        }
 
         return "cssTemplate.css";
     }

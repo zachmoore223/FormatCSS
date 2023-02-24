@@ -1,18 +1,20 @@
 package org.wcci.entities.repositories.restControllers.entities;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-
+@Entity()
 public class Style {
-
-    private String name;
+    @Id
+    @GeneratedValue() //generate new id for each new review, starting at 1
+    private long styleID;
     private String backgroundColor;
     private String h1Color;
     private String h2Color;
     private String h3Color;
     private String pColor;
 
-    public Style(String name, String backgroundColor, String h1Color, String h2Color, String h3Color, String pColor){
-        this.name = name;
+    public Style(String backgroundColor, String h1Color, String h2Color, String h3Color, String pColor){
         this.backgroundColor = backgroundColor;
         this.h1Color = h1Color;
         this.h2Color = h2Color;
@@ -20,8 +22,8 @@ public class Style {
         this.pColor = pColor;
     }
 
-    public String getName() {
-        return name;
+    public void setStyleID(final long styleID){
+        this.styleID = styleID;
     }
     public String getBackgroundColor() {
         return backgroundColor;

@@ -14,11 +14,11 @@ public class StyleController {
     }
     @GetMapping("/css/{styleSheetID}.css")
      public String getStyleSheet(Model model, @PathVariable int styleSheetID){
-        Style testerStyle1 = new Style("123", "darkgrey", "darkred", "rgb(231, 231, 231",
+        Style testerStyle1 = new Style("darkgrey", "darkred", "rgb(231, 231, 231",
                 "white", "black");
-        Style testerStyle2 = new Style("123", "grey", "rgb(255, 175, 188);", "rgb(255, 195, 195)",
+        Style testerStyle2 = new Style( "grey", "rgb(255, 175, 188);", "rgb(255, 195, 195)",
                 "rgb(211, 211, 211)", "white");
-        Style blankStyle = new Style("123", "white", "black", "black",
+        Style blankStyle = new Style( "white", "black", "black",
                 "black", "black");
 
         model.addAttribute("styleSheetID", styleSheetID);

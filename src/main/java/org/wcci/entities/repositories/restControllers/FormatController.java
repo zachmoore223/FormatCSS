@@ -7,14 +7,29 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
 public class FormatController {
-    @GetMapping("/styles/{styleSheetID}")
+
+    @GetMapping("/index")
+    public String index() {
+        return "indexTemplate.html";
+    }
+    @GetMapping("/styles/{styleSheetID}.css")
      public String getStyleSheet(Model model, @PathVariable int styleSheetID){
         model.addAttribute("styleSheetID", styleSheetID);
+        if (styleSheetID == 1){
+            model.addAttribute("bodyBackgroundColor", "darkgrey");
+        } else if (styleSheetID == 2){
+            model.addAttribute("bodyBackgroundColor", "grey");
+        } else {
+            model.addAttribute("bodyBackgroundColor", "white");
+        }
+        return "cssTemplate.css";
+    }
+
+    @GetMapping ("/demo/{num}")
+    public String formatIndex (Model model, @PathVariable int num){
+        model.addAttribute("num", num);
         return "indexTemplate.html";
     }
 
-    @GetMapping("/index")
-        public String index() {
-            return "indexTemplate.html";
-        }
+
 }

@@ -18,7 +18,7 @@ body {
 
 /* Create two equal columns that float next to each other */
 h1 {
-color: darkred;
+color: [(${h1Color})];;
 }
 h2 {
   color: rgb(231, 231, 231);

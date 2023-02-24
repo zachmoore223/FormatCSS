@@ -12,7 +12,7 @@ public class FormatController {
     public String index() {
         return "indexTemplate.html";
     }
-    @GetMapping("/styles/{styleSheetID}.css")
+    @GetMapping("/css/{styleSheetID}.css")
      public String getStyleSheet(Model model, @PathVariable int styleSheetID){
         model.addAttribute("styleSheetID", styleSheetID);
         if (styleSheetID == 1){
@@ -22,6 +22,15 @@ public class FormatController {
         } else {
             model.addAttribute("bodyBackgroundColor", "white");
         }
+        
+        if (styleSheetID == 1){
+            model.addAttribute("h1Color", "darkred");
+        } else if (styleSheetID == 2){
+            model.addAttribute("h1Color", "rgb(255, 175, 188)");
+        } else {
+            model.addAttribute("h1Color", "black");
+        }
+
         return "cssTemplate.css";
     }
 

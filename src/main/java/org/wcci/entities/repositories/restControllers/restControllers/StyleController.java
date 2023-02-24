@@ -20,8 +20,8 @@ public class StyleController {
                 "rgb(211, 211, 211)", "white");
         Style blankStyle = new Style( "white", "black", "black",
                 "black", "black");
-
         model.addAttribute("styleSheetID", styleSheetID);
+
     if (styleSheetID==1) {
         model.addAttribute("bodyBackgroundColor", testerStyle1.getBackgroundColor());
         model.addAttribute("h1Color", testerStyle1.getH1Color());

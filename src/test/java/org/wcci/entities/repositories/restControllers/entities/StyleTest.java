@@ -8,8 +8,7 @@ class StyleTest {
 
     @Test
     void constructorTest() {
-        Style testerStyle = new Style ("red", "black", "white", "green", "blue", "white");
-        assertEquals("red", testerStyle.getName());
+        Style testerStyle = new Style ("black", "white", "green", "blue", "white");
         assertEquals("black", testerStyle.getBackgroundColor());
         assertEquals("white", testerStyle.getH1Color());
         assertEquals("green", testerStyle.getH2Color());

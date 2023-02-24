@@ -1,13 +1,13 @@
 package org.wcci.entities.repositories.restControllers;
 
-public class Style {
+public class Format {
     String backgroundColor;
     String h1Color;
     String h2Color;
     String h3Color;
     String pColor;
 
-    public Style(String backgroundColor, String h1Color, String h2Color, String h3Color, String pColor){
+    public Format(String backgroundColor, String h1Color, String h2Color, String h3Color, String pColor){
         this.backgroundColor = backgroundColor;
         this.h1Color = h1Color;
         this.h2Color = h2Color;

@@ -27,7 +27,7 @@ public class StyleController {
     /*1st stye:
     curl -X POST http://localhost:8080/css -H 'Content-Type: application/json' -d '
      {"bodyBackgroundColor": "darkgrey", "h1Color": "darkred", "h2Color":
-     "rgb(231, 231, 231)", "h3Color": "white", "pColor": "black"}'
+     "rgb(187, 2, 2)", "h3Color": "white", "pColor": "black"}'
 
      2nd stye:
      curl -X POST http://localhost:8080/css -H 'Content-Type: application/json' -d '

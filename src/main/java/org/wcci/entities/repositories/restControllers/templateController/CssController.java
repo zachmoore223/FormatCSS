@@ -35,6 +35,7 @@ public class CssController {
     @GetMapping ("/demo/{num}")
     public String formatIndex (Model model, @PathVariable int num){
         model.addAttribute("num", num);
+        model.addAttribute("styles", styleRepository.findAll());
         return "indexTemplate.html";
     }
 

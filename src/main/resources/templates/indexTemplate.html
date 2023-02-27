@@ -7,6 +7,15 @@
 
 <body>
 <p> Change Style: <a href="/demo/1">Red-Grey Style</a>   ||   <a href="/demo/2">Pink-Grey Style</a>   ||   <a href="/demo/3">Plain</a></p>
+<div th:switch="${styles}">
+    <h3 th:case="null">No Styles Yet</h3>
+
+    <div th:case="*">
+        <a th:each="style : ${styles}" th:href="@{'/demo/' + ${style.styleID}}" th:text="${style.styleID}"></a>
+    </div>
+
+</div>
+
 
 <br>
 <h1>H1 Example</h1>

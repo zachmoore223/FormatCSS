@@ -22,9 +22,9 @@ public class CssController {
 
     @GetMapping("/css/{styleSheetID}.css")
      public String getStyleSheet(Model model, @PathVariable long styleSheetID){
-        styleRepository.findById(styleSheetID).get().getBackgroundColor();
+        styleRepository.findById(styleSheetID).get();
         model.addAttribute("styleSheetID", styleSheetID);
-        model.addAttribute("bodyBackgroundColor", styleRepository.findById(styleSheetID).get().getBackgroundColor());
+        model.addAttribute("bodyBackgroundColor", styleRepository.findById(styleSheetID).get().getBodyBackgroundColor());
         model.addAttribute("h1Color", styleRepository.findById(styleSheetID).get().getH1Color());
         model.addAttribute("h2Color", styleRepository.findById(styleSheetID).get().getH2Color());
         model.addAttribute("h3Color", styleRepository.findById(styleSheetID).get().getH3Color());

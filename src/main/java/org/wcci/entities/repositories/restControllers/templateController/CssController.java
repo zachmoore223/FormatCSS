@@ -28,7 +28,7 @@ public class CssController {
         model.addAttribute("h1Color", styleRepository.findById(styleSheetID).get().getH1Color());
         model.addAttribute("h2Color", styleRepository.findById(styleSheetID).get().getH2Color());
         model.addAttribute("h3Color", styleRepository.findById(styleSheetID).get().getH3Color());
-        model.addAttribute("pColor", styleRepository.findById(styleSheetID).get().getPColor());
+        model.addAttribute("pColor", styleRepository.findById(styleSheetID).get().getpColor());
         return "cssTemplate.css";
     }
 

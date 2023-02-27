@@ -14,7 +14,7 @@ class StyleTest {
         assertEquals("white", testerStyle.getH1Color());
         assertEquals("green", testerStyle.getH2Color());
         assertEquals("blue", testerStyle.getH3Color());
-        assertEquals("white", testerStyle.getPColor());
+        assertEquals("white", testerStyle.getpColor());
     }
 
     @Test
@@ -25,6 +25,6 @@ class StyleTest {
         assertEquals("darkred", testerStyle.getH1Color());
         assertEquals("rgb(231, 231, 231)", testerStyle.getH2Color());
         assertEquals("white", testerStyle.getH3Color());
-        assertEquals("black", testerStyle.getPColor());
+        assertEquals("black", testerStyle.getpColor());
     }
 }

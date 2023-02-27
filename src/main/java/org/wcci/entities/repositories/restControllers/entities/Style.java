@@ -50,7 +50,7 @@ public class Style {
         return h3Color;
     }
 
-    public String getPColor() {
+    public String getpColor() {
         return pColor;
     }
 }

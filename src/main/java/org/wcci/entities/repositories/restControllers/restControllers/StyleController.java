@@ -12,7 +12,7 @@ public class StyleController {
     public StyleController(@Autowired StyleRepository styleRepository) {
         this.styleRepository = styleRepository;
     }
-    
+
     //curl -X GET http://localhost:8080/css -H 'Content-Type: application/json'
     @GetMapping("/css")
     public Iterable<Style> getStyles() {
@@ -25,12 +25,12 @@ public class StyleController {
     }
 
     /* curl -X POST http://localhost:8080/css -H 'Content-Type: application/json' -d '
-     {"bodyBackgroundColor": "darkgrey", "h1Color": "darkred", h2Color":
-     "rgb(231, 231, 231", h3Color": "white", pColor": "black" }'
+     {"bodyBackgroundColor": "darkgrey", "h1Color": "darkred", "h2Color":
+     "rgb(231, 231, 231", "h3Color": "white", "pColor": "black" }'
 
      curl -X POST http://localhost:8080/css 'Content-Type: application/json' -d '
-     {"bodyBackgroundColor": "darkgrey", "h1Color": "darkred", h2Color":
-     "rgb(231, 231, 231", h3Color": "white", pColor": "black" }'
+     {"bodyBackgroundColor": "darkgrey", "h1Color": "darkred", "h2Color":
+     "rgb(231, 231, 231", "h3Color": "white", "pColor": "black" }'
      */
     @PostMapping("/css")
     public Style postStyle(final @RequestBody Style style) {

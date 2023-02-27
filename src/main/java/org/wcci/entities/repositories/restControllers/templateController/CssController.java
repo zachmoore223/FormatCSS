@@ -9,7 +9,7 @@ import org.wcci.entities.repositories.restControllers.repositories.StyleReposito
 
 @Controller
 public class CssController {
-    final StyleRepository styleRepository;
+    final private StyleRepository styleRepository;
 
     public CssController(@Autowired StyleRepository styleRepository) {
         this.styleRepository = styleRepository;

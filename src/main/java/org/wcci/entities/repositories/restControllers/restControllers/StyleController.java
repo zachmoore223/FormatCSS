@@ -24,20 +24,26 @@ public class StyleController {
         return styleRepository.findById(css_id).get();
     }
 
-    /*1st stye:
-    curl -X POST http://localhost:8080/css -H 'Content-Type: application/json' -d '
-     {"bodyBackgroundColor": "darkgrey", "h1Color": "darkred", "h2Color":
+    /* POST CURL TESTS:
+    1st style:
+     curl -X POST http://localhost:8080/css -H 'Content-Type: application/json' -d '
+     {"name": "Red-Grey", "bodyBackgroundColor": "darkgrey", "h1Color": "darkred", "h2Color":
      "rgb(187, 2, 2)", "h3Color": "white", "pColor": "black"}'
 
-     2nd stye:
+     2nd style:
      curl -X POST http://localhost:8080/css -H 'Content-Type: application/json' -d '
-     {"bodyBackgroundColor": "grey", "h1Color": "rgb(255, 175, 188)", "h2Color":
+     {"name": "Pink-Grey","bodyBackgroundColor": "grey", "h1Color": "rgb(255, 175, 188)", "h2Color":
      "rgb(255, 195, 195)", "h3Color": "rgb(211, 211, 211)", "pColor": "white"}'
 
      */
     @PostMapping("/css")
     public Style postStyle(final @RequestBody Style style) {
         return styleRepository.save(style);
+    }
+
+    @DeleteMapping("/css")
+    public void deleteStyle (@PathVariable final long style_id){
+        styleRepository.delete(styleRepository.findById(style_id).get());
     }
 
 }

@@ -8,13 +8,16 @@ public class Style {
     @Id
     @GeneratedValue() //generate new id for each new review, starting at 1
     private long styleID;
+
+    private String name;
     private String bodyBackgroundColor;
     private String h1Color;
     private String h2Color;
     private String h3Color;
     private String pColor;
 
-    public Style(String bodyBackgroundColor, String h1Color, String h2Color, String h3Color, String pColor){
+    public Style(String name, String bodyBackgroundColor, String h1Color, String h2Color, String h3Color, String pColor){
+        this.name = name;
         this.bodyBackgroundColor = bodyBackgroundColor;
         this.h1Color = h1Color;
         this.h2Color = h2Color;
@@ -22,6 +25,9 @@ public class Style {
         this.pColor = pColor;
     }
     protected Style() {
+    }
+    public String getName(){
+        return name;
     }
     public long getStyleID (){return this.styleID;}
 

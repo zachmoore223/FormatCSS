@@ -8,7 +8,8 @@ class StyleTest {
 
     @Test
     void constructorTest() {
-        Style testerStyle = new Style ("black", "white", "green", "blue", "white");
+        Style testerStyle = new Style ("Red-Grey","black", "white", "green", "blue", "white");
+        assertEquals("Red-Grey", testerStyle.getName());
         assertEquals("black", testerStyle.getBodyBackgroundColor());
         assertEquals("white", testerStyle.getH1Color());
         assertEquals("green", testerStyle.getH2Color());
@@ -18,7 +19,8 @@ class StyleTest {
 
     @Test
     void constructorTest2() {
-        Style testerStyle = new Style ("darkgrey", "darkred", "rgb(231, 231, 231)", "white", "black");
+        Style testerStyle = new Style ("Pink-Grey", "darkgrey", "darkred", "rgb(231, 231, 231)", "white", "black");
+        assertEquals("Pink-Grey", testerStyle.getName());
         assertEquals("darkgrey", testerStyle.getBodyBackgroundColor());
         assertEquals("darkred", testerStyle.getH1Color());
         assertEquals("rgb(231, 231, 231)", testerStyle.getH2Color());

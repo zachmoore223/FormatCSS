@@ -15,4 +15,14 @@ class StyleTest {
         assertEquals("blue", testerStyle.getH3Color());
         assertEquals("white", testerStyle.getPColor());
     }
+
+    @Test
+    void constructorTest2() {
+        Style testerStyle = new Style ("darkgrey", "darkred", "rgb(231, 231, 231)", "white", "black");
+        assertEquals("darkgrey", testerStyle.getBackgroundColor());
+        assertEquals("darkred", testerStyle.getH1Color());
+        assertEquals("rgb(231, 231, 231)", testerStyle.getH2Color());
+        assertEquals("white", testerStyle.getH3Color());
+        assertEquals("black", testerStyle.getPColor());
+    }
 }

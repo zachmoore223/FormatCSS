@@ -4,6 +4,7 @@
 * We want the ability to store "good" combinations of settings and make them available as a stylesheet.
 * a prototype with three different colors, simple CSS that has everything connected together
 * hard coded style sheet as stylesheet 1
+* (Hardcoded examples) "As a graphic designer, I need to be able to modify the colors for a given styleNumber, so my stylesheets are purchased by developers."
 * Example:
     * (Hardcoded examples) "As salesperson, I need to be able to display two stylesheets with the same structure but different colors, so I can do demos and sell this investors."
       Development team: "oh, thats medium-to-small"

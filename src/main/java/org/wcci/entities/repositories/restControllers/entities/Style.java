@@ -22,6 +22,8 @@ public class Style {
         this.pColor = pColor;
     }
 
+    public long getStyleID (){return this.styleID;}
+
     public void setStyleID(final long styleID){
         this.styleID = styleID;
     }

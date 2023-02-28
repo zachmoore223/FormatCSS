@@ -26,6 +26,6 @@
 # Stories
 
 * (DONE! - Simple two css sheets setup) "As a salesperson, I need to be able to display two stylesheets with the same structure but different colors, so I can do demos and sell this investors." 
-* (Done! - each new style become a link) "As a website developer, I need to be able to download CSS based on styleNumber, so my site is pretty." 
-* (in process!!! - requires a PUT)" As a graphic designer, I need to be able to modify the colors for a given styleNumber or remove styles that are no longer needed, so my stylesheets are purchased by developers." 
-
+* (DONE! - each new style become a link) "As a website developer, I need to be able to download CSS based on styleNumber, so my site is pretty." 
+* (DONE! - Put feature added to add to API)" As a graphic designer, I need to be able to modify the colors for a given styleNumber or remove styles that are no longer needed, so my stylesheets are purchased by developers." 
+* (in process)" As a user, I would like to add and delete styles easily from the webpage"

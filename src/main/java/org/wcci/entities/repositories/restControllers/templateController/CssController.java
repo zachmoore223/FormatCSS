@@ -19,7 +19,6 @@ public class CssController {
         return "indexTemplate.html";
     }
 
-
     @GetMapping("/css/{styleSheetID}.css")
      public String getStyleSheet(Model model, @PathVariable long styleSheetID){
         styleRepository.findById(styleSheetID).get();

@@ -27,9 +27,10 @@
 <br/>
 
 <div>
-    <!-- want to do a fetch post instead of a form!!!!!!! -->
     <h3>Create New Style</h3>
-    <form action="put submit adding new style here">
+    <form action="/css" method="post">
+        <label for="name">Style Name:</label>
+        <input type="text" id="name" name="name"><br/><br/>
         <label for="bodyBackgroundColor">Background Color:</label>
         <input type="text" id="bodyBackgroundColor" name="bodyBackgroundColor"><br/><br/>
         <label for="h1Color">H1 Color:</label>
@@ -38,8 +39,8 @@
         <input type="text" id="h2Color" name="h2Color"><br/><br/>
         <label for="h3Color">H3 Color:</label>
         <input type="text" id="h3Color" name="h3Color"><br/><br/>
-        <label for="paragraphColor">Paragraph Color:</label>
-        <input type="text" id="paragraphColor" name="paragraphColor"><br/><br/>
+        <label for="pColor">Paragraph Color:</label>
+        <input type="text" id="pColor" name="pColor"><br/><br/>
         <input type="submit" value="Submit">
     </form>
 </div>

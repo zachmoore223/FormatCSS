@@ -43,11 +43,21 @@ public class StyleController {
      "black", "h3Color": "black", "pColor": "black"}'
 
      */
+//    @PostMapping("/css")
+//    public Style postStyle(final @RequestBody Style style) {
+//        return styleRepository.save(style);
+//    }
+
     @PostMapping("/css")
-    public Style postStyle(final @RequestBody Style style) {
+    public Style addStyle(@RequestParam String name, @RequestParam String bodyBackgroundColor, @RequestParam String h1Color,
+                          @RequestParam String h2Color, @RequestParam String h3Color,
+                          @RequestParam String pColor, final @RequestBody Style style) {
         return styleRepository.save(style);
     }
-    //curl for PUT requires the generate ID value (which matches css/ add {css_id} path variable)
+
+
+
+    //curl for PUT requires the generated ID value (which matches css/ add {css_id} path variable)
     /* curl -X PUT http://localhost:8080/css/2 -H 'Content-Type: application/json' -d '
      {"styleID":2, "name": "Pink-Grey","bodyBackgroundColor": "black", "h1Color": "rgb(255, 175, 188)", "h2Color":
      "rgb(255, 195, 195)", "h3Color": "rgb(211, 211, 211)", "pColor": "white"}' */

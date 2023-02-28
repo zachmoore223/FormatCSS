@@ -6,9 +6,8 @@ import javax.persistence.Id;
 @Entity()
 public class Style {
     @Id
-    @GeneratedValue() //generate new id for each new review, starting at 1
+    @GeneratedValue() //generate new id for each new style, starting at 1
     private long styleID;
-
     private String name;
     private String bodyBackgroundColor;
     private String h1Color;

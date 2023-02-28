@@ -22,7 +22,6 @@
 * CSS has many "knobs" -- size, color, etc, ....
 * We want the ability to store "good" combinations of settings and make them available as a stylesheet.
 * a prototype with three different colors, simple CSS that has everything connected together
-* hard coded style sheet as stylesheet 1
   
 # Stories
 

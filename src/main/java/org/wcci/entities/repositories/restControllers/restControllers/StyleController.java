@@ -19,6 +19,8 @@ public class StyleController {
         return styleRepository.findAll();
     }
 
+    //curl -X GET http://localhost:8080/css/1 -H 'Content-Type: application/json'
+    //curl -X GET http://localhost:8080/css/2 -H 'Content-Type: application/json'
     @GetMapping("/css/{css_id}")
     public Style getStyle(@PathVariable final long css_id) {
         return styleRepository.findById(css_id).get();
@@ -35,15 +37,32 @@ public class StyleController {
      {"name": "Pink-Grey","bodyBackgroundColor": "grey", "h1Color": "rgb(255, 175, 188)", "h2Color":
      "rgb(255, 195, 195)", "h3Color": "rgb(211, 211, 211)", "pColor": "white"}'
 
+     3rd style:
+     curl -X POST http://localhost:8080/css -H 'Content-Type: application/json' -d '
+     {"name": "Plain","bodyBackgroundColor": "white", "h1Color": "black", "h2Color":
+     "black", "h3Color": "black", "pColor": "black"}'
+
      */
     @PostMapping("/css")
     public Style postStyle(final @RequestBody Style style) {
         return styleRepository.save(style);
     }
+    //curl for PUT requires the generate ID value (which matches css/ add {css_id} path variable)
+    /* curl -X PUT http://localhost:8080/css/2 -H 'Content-Type: application/json' -d '
+     {"styleID":2, "name": "Pink-Grey","bodyBackgroundColor": "black", "h1Color": "rgb(255, 175, 188)", "h2Color":
+     "rgb(255, 195, 195)", "h3Color": "rgb(211, 211, 211)", "pColor": "white"}' */
+    @PutMapping("/css/{css_id}")
+    public void putStyle(@PathVariable final long css_id, final @RequestBody Style style) throws Exception {
+        if (style.getStyleID() != css_id) {
+            throw new Exception("Style body has id " + style.getStyleID() + " but url had id " + css_id);
+        }
+        styleRepository.save(style);
+    }
 
-    @DeleteMapping("/css")
-    public void deleteStyle (@PathVariable final long style_id){
-        styleRepository.delete(styleRepository.findById(style_id).get());
+    //curl -X DELETE http://localhost:8080/css/1 -H 'Content-Type: application/json'
+    @DeleteMapping("/css/{css_id}")
+    public void deleteStyle (@PathVariable final long css_id){
+        styleRepository.delete(styleRepository.findById(css_id).get());
     }
 
 }

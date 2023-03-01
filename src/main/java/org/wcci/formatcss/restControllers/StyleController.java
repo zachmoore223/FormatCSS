@@ -28,10 +28,19 @@ public class StyleController {
 
     //use form to create new style
     @PostMapping("/css")
-    public Style addStyle(@RequestParam String name, @RequestParam String bodyBackgroundColor, @RequestParam String h1Color,
-                          @RequestParam String h2Color, @RequestParam String h3Color,
+    public Style addStyle(@RequestParam String name,
+                          @RequestParam String bodyBackgroundColor,
+                          @RequestParam String h1Color,
+                          @RequestParam String h2Color,
+                          @RequestParam String h3Color,
                           @RequestParam String pColor) {
-        final Style style = new Style(name, bodyBackgroundColor, h1Color, h2Color, h3Color, pColor);
+        final Style style = new Style(
+                name,
+                bodyBackgroundColor,
+                h1Color,
+                h2Color,
+                h3Color,
+                pColor);
         return styleRepository.save(style);
     }
 

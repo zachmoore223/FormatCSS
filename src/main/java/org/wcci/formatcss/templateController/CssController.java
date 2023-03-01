@@ -18,7 +18,7 @@ public class CssController {
     @GetMapping("/index")
     public String index(Model model) {
         model.addAttribute("styles", styleRepository.findAll());
-        return "index.html";
+        return "indexTemplate.html";
     }
 
     @GetMapping("/css/{styleSheetID}.css")
@@ -27,12 +27,12 @@ public class CssController {
         return "cssTemplate.css";
     }
 
-//    @GetMapping("/demo/{num}")
-//    public String formatIndex(Model model, @PathVariable int num) {
-//        model.addAttribute("num", num);
-//        model.addAttribute("styles", styleRepository.findAll());
-//        return "indexTemplate.html";
-//    }
+    @GetMapping("/demo/{num}")
+    public String formatIndex(Model model, @PathVariable int num) {
+        model.addAttribute("num", num);
+        model.addAttribute("styles", styleRepository.findAll());
+        return "indexTemplate.html";
+    }
 
 
 }

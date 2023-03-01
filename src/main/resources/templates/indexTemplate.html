@@ -2,7 +2,10 @@
 <html>
 <html lang="en-US">
 <head>
-    <link rel="stylesheet" th:href="@{'/css/' + ${num} + '.css'}">
+    <div th:switch="${styles}">
+        <link th:case="null" rel="stylesheet" href="style0.css">
+        <link th:case="*" rel="stylesheet" th:href="@{'/css/' + ${num} + '.css'}">
+    </div>
 </head>
 
 <body>
@@ -11,7 +14,8 @@
     <h3 th:case="null">No Styles Yet</h3>
 
     <div th:case="*">
-        <p> Change Style:   <a th:each="style : ${styles}" th:href="@{'/demo/' + ${style.styleID}}" th:text="${style.name} + '   ||   '"></a></p>
+        <p> Change Style: <a th:each="style : ${styles}" th:href="@{'/demo/' + ${style.styleID}}"
+                             th:text="${style.name} + '   ||   '"></a></p>
     </div>
 
 </div>

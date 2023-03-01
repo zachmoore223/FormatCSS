@@ -1,6 +1,6 @@
 body {
   font-family: "Helvetica", Sans-Serif;
-  background-color: [(${bodyBackgroundColor})];
+  background-color: [(${style.bodyBackgroundColor})];
 }
 
 /* Header Title */
@@ -18,15 +18,16 @@ body {
 
 /* Create two equal columns that float next to each other */
 h1 {
-color: [(${h1Color})];
+color: [(${style.h1Color})];
 }
 h2 {
-  color: [(${h2Color})];
+  color: [(${style.h2Color})];
   }
 h3 {
-  color: [(${h3Color})];
+  color: [(${style.h3Color})];
 }
 p {
-  color: [(${pColor})];
+  color: [(${style.pColor})];
+  color: [(${style.pColor})];
 }
 

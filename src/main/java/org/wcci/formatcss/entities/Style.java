@@ -1,4 +1,4 @@
-package org.wcci.entities.repositories.restControllers.entities;
+package org.wcci.formatcss.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

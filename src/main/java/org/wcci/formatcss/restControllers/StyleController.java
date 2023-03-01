@@ -1,9 +1,9 @@
-package org.wcci.entities.repositories.restControllers.restControllers;
+package org.wcci.formatcss.restControllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import org.wcci.entities.repositories.restControllers.entities.Style;
-import org.wcci.entities.repositories.restControllers.repositories.StyleRepository;
+import org.wcci.formatcss.entities.Style;
+import org.wcci.formatcss.repositories.StyleRepository;
 
 @RestController
 public class StyleController {
@@ -26,28 +26,7 @@ public class StyleController {
         return styleRepository.findById(css_id).get();
     }
 
-    /* POST CURL TESTS:
-    1st style:
-     curl -X POST http://localhost:8080/css -H 'Content-Type: application/json' -d '
-     {"name": "Red-Grey", "bodyBackgroundColor": "darkgrey", "h1Color": "darkred", "h2Color":
-     "rgb(187, 2, 2)", "h3Color": "white", "pColor": "black"}'
-
-     2nd style:
-     curl -X POST http://localhost:8080/css -H 'Content-Type: application/json' -d '
-     {"name": "Pink-Grey","bodyBackgroundColor": "grey", "h1Color": "rgb(255, 175, 188)", "h2Color":
-     "rgb(255, 195, 195)", "h3Color": "rgb(211, 211, 211)", "pColor": "white"}'
-
-     3rd style:
-     curl -X POST http://localhost:8080/css -H 'Content-Type: application/json' -d '
-     {"name": "Plain","bodyBackgroundColor": "white", "h1Color": "black", "h2Color":
-     "black", "h3Color": "black", "pColor": "black"}'
-
-     */
-//    @PostMapping("/css")
-//    public Style postStyle(final @RequestBody Style style) {
-//        return styleRepository.save(style);
-//    }
-
+    //use form to create new style
     @PostMapping("/css")
     public Style addStyle(@RequestParam String name, @RequestParam String bodyBackgroundColor, @RequestParam String h1Color,
                           @RequestParam String h2Color, @RequestParam String h3Color,
@@ -71,7 +50,7 @@ public class StyleController {
 
     //curl -X DELETE http://localhost:8080/css/1 -H 'Content-Type: application/json'
     @DeleteMapping("/css/{css_id}")
-    public void deleteStyle (@PathVariable final long css_id){
+    public void deleteStyle(@PathVariable final long css_id) {
         styleRepository.delete(styleRepository.findById(css_id).get());
     }
 

@@ -51,10 +51,10 @@ public class StyleController {
     @PostMapping("/css")
     public Style addStyle(@RequestParam String name, @RequestParam String bodyBackgroundColor, @RequestParam String h1Color,
                           @RequestParam String h2Color, @RequestParam String h3Color,
-                          @RequestParam String pColor, final @RequestBody Style style) {
+                          @RequestParam String pColor) {
+        final Style style = new Style(name, bodyBackgroundColor, h1Color, h2Color, h3Color, pColor);
         return styleRepository.save(style);
     }
-
 
 
     //curl for PUT requires the generated ID value (which matches css/ add {css_id} path variable)
